@@ -19,11 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
-    Route::get('/', function (){
-        return 123;
-    });
+
+    Route::get('/', 'Admin\DashboardController@index')->name('dashboard');
 });
 
