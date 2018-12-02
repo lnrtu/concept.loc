@@ -24,5 +24,6 @@ Auth::routes();
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
 
     Route::get('/', 'Admin\DashboardController@index')->name('dashboard');
+    Route::get('/configs', 'Admin\ConfigsController@index')->name('adminConfigs');
 });
 
