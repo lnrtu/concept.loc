@@ -14,9 +14,6 @@ class BladeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::directive('hello', function ($expression) {
-            return "<?php echo 'Hello ' . {$expression}; ?>";
-        });
         Blade::directive('editor', function ($number) {
 
             return "<?php echo '<textarea id=\"ckeditor'.{$number}.'\" class=\"ckeditor\"> </textarea><script>KEDITOR.replace( \"ckeditor'.{$number}.'\" );</script>'; ?>";

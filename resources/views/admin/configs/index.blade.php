@@ -12,12 +12,12 @@
         @forelse($configs as $config)
         <tr>
             <td>{{$config->name_rus}}</td>
-            <td><a class="btn btn-secondary btn-sm" href="#">Изменить</a></td>
+            <td><a class="btn btn-secondary btn-sm" href="/admin/configs/{{{$config->id}}}/edit" title="Изменить">Изменить</a></td>
         </tr>
         @empty
 
         @endforelse
         </tbody>
     </table>
-    @editor('3')
+{{--@editor('1')--}}
 @endsection

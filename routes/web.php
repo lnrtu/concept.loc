@@ -27,3 +27,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
     Route::get('/configs', 'Admin\ConfigsController@index')->name('adminConfigs');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
