@@ -11,16 +11,16 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ConfigsTest extends TestCase
 {
-    use DatabaseTransactions;
+//    use DatabaseTransactions;
+    use RefreshDatabase;
 
-    private $user;
+    private $configs;
 
     public function setup()
     {
         parent::setup();
-        $this->user = factory(User::class)->make([
-            'is_admin' => '1',
-        ]);
+        $this->loginAsAdmin();
+        $this->configs = factory(Configs::class)->create();
     }
     /**
      * A basic test example.
@@ -29,7 +29,8 @@ class ConfigsTest extends TestCase
      */
     public function test_show_configs_page()
     {
-//        $response = $this->actingAs($this->user)->get('/admin/configs');
-//        $response->assertSeeText('Список общих настроек сайта');
+        $response = $this->get('/admin/configs');
+        $response->assertSeeText('Список общих настроек сайта');
+        $response->assertSeeText('Тег Keywords');
     }
 }

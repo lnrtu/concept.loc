@@ -24,7 +24,12 @@ Auth::routes();
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
 
     Route::get('/', 'Admin\DashboardController@index')->name('dashboard');
-    Route::get('/configs', 'Admin\ConfigsController@index')->name('adminConfigs');
+
+    Route::prefix('configs')->group(function(){
+        Route::get('/', 'Admin\ConfigsController@index')->name('configsIndex');
+        Route::get('{id}', 'Admin\ConfigsController@edit')->name('configsEdit');
+        Route::put('/{id}', 'Admin\ConfigsController@update')->name('configsUpdate');
+    });
 });
 
 

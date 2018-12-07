@@ -5,6 +5,7 @@
         <thead>
         <tr>
             <th scope="col">Название</th>
+            <th scope="col">Содержимое</th>
             <th scope="col">Действие</th>
         </tr>
         </thead>
@@ -12,7 +13,8 @@
         @forelse($configs as $config)
         <tr>
             <td>{{$config->name_rus}}</td>
-            <td><a class="btn btn-secondary btn-sm" href="/admin/configs/{{{$config->id}}}/edit" title="Изменить">Изменить</a></td>
+            <td>{{$config->value}}</td>
+            <td><a class="btn btn-secondary btn-sm" href="{{route('configsEdit',$config->id)}}" title="Изменить">Изменить</a></td>
         </tr>
         @empty
 

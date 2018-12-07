@@ -59,7 +59,8 @@ class ConfigsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $config = Configs::findOrFail($id);
+        return view('admin.configs.edit')->with('config',$config);
     }
 
     /**
@@ -71,7 +72,10 @@ class ConfigsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $config = Configs::findOrFail($id);
+        $config->value = $request->value;
+        $config->save();
+       return redirect(route('configsIndex'));
     }
 
     /**
