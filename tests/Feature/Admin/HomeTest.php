@@ -12,15 +12,6 @@ class HomeTest extends TestCase
 {
     use DatabaseTransactions;
 
-    private $user;
-
-    public function setup()
-    {
-        parent::setup();
-        $this->user = factory(User::class)->make([
-            'is_admin' => '1',
-        ]);
-    }
     /**
      * A basic test example.
      *
@@ -28,7 +19,8 @@ class HomeTest extends TestCase
      */
     public function test_show_admin_dashboard()
     {
-        $response = $this->actingAs($this->user)->get('/admin');
+        $this->loginAsAdmin();
+        $response = $this->get('/admin');
         $response->assertSeeText('Панель управления сайтом');
     }
 }

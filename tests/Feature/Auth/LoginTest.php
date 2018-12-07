@@ -10,7 +10,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class LoginTest extends TestCase
 {
-    use DatabaseTransactions;
+//    use DatabaseTransactions;
+    use RefreshDatabase;
 
     /**
      * A basic test example.
@@ -41,20 +42,15 @@ class LoginTest extends TestCase
 
     public function test_user_redirect_to_home__when_not_authenticated_as_admin()
     {
-        $user = factory(User::class)->make([
-            'is_admin' => '0',
-        ]);
-
-        $response = $this->actingAs($user)->get('/admin');
+        $this->loginAsUser();
+        $response = $this->get('/admin');
         $response->assertRedirect('/');
     }
 
     public function test_user_can_view_a_admin_form_when_authenticated_as_admin()
     {
-        $user = factory(User::class)->make([
-            'is_admin' => '1',
-        ]);
-        $response = $this->actingAs($user)->get('/admin');
+        $this->loginAsAdmin();
+        $response = $this->get('/admin');
         $response->assertSeeText('Панель управления сайтом');
     }
 
