@@ -22,7 +22,8 @@ Auth::routes();
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 'admin'])->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
-    Route::resource('configs', 'ConfigsController')->only(['index', 'edit', 'update']);
+    Route::resource('configs', 'ConfigController')->only(['index', 'edit', 'update']);
+    Route::resource('orders', 'OrderController')->only(['index', 'destroy', 'show']);
 });
 
 

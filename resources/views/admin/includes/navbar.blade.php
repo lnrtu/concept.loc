@@ -11,37 +11,37 @@
                 <a class="nav-link" href="/admin/configs">Настройки</a>
             </li>
             <li class="nav-item {{Request::is('admin/promos') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/promos">Промокоды</a>
+                <a class="nav-link" href="/admin/promos">Промокоды</a>
             </li>
             <li class="nav-item {{Request::is('admin/catalogs') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/catalogs">Каталог товаров</a>
+                <a class="nav-link" href="/admin/catalogs">Каталог товаров</a>
             </li>
             <li class="nav-item {{Request::is('admin/chrs') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/chrs">Характеристики</a>
+                <a class="nav-link" href="/admin/chrs">Характеристики</a>
             </li>
             <li class="nav-item {{Request::is('admin/sitemenus') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/sitemenus">Меню сайта</a>
+                <a class="nav-link" href="/admin/sitemenus">Меню сайта</a>
             </li>
             <li class="nav-item {{Request::is('admin/tms') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/tms">ТМ</a>
+                <a class="nav-link" href="/admin/tms">ТМ</a>
             </li>
             <li class="nav-item {{Request::is('admin/products') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/products">Товары</a>
+                <a class="nav-link" href="/admin/products">Товары</a>
             </li>
             <li class="nav-item {{Request::is('admin/articles') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/articles">Статьи</a>
+                <a class="nav-link" href="/admin/articles">Статьи</a>
             </li>
             <li class="nav-item {{Request::is('admin/novosts') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/novosts">Новости</a>
+                <a class="nav-link" href="/admin/novosts">Новости</a>
             </li>
             <li class="nav-item {{Request::is('admin/staticps') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/staticps">Стат. страницы</a>
+                <a class="nav-link" href="/admin/staticps">Стат. страницы</a>
             </li>
             <li class="nav-item {{Request::is('admin/comments') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/comments">Отзывы</a>
+                <a class="nav-link" href="/admin/comments">Отзывы</a>
             </li>
             <li class="nav-item {{Request::is('admin/orders') ? 'active' : '' }}">
-                <a class="nav-link" href="admin/orders">Заказы</a>
+                <a class="nav-link" href="/admin/orders">Заказы</a>
             </li>
         </ul>
 
