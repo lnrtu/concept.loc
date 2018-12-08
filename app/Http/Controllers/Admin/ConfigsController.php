@@ -75,7 +75,7 @@ class ConfigsController extends Controller
         $config = Configs::findOrFail($id);
         $config->value = $request->value;
         $config->save();
-       return redirect(route('configsIndex'));
+       return redirect(route('admin.configs.index'));
     }
 
     /**

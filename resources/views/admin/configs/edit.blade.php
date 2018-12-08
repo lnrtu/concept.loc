@@ -9,8 +9,8 @@
                 <h2 class="text-left">{{$config->name_rus}}</h2>
             </div>
             <div class="card-body">
-                <a href="{{route('configsIndex')}}" class="btn btn-info text-left mb-3">Назад</a>
-                <form action="{{route('configsUpdate',$config->id)}}" method="post">
+                <a href="{{route('admin.configs.index')}}" class="btn btn-info text-left mb-3">Назад</a>
+                <form action="{{route('admin.configs.update',$config->id)}}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
