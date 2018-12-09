@@ -25,6 +25,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
     Route::resource('configs', 'ConfigController')->only(['index', 'edit', 'update']);
     Route::resource('orders', 'OrderController')->only(['index', 'destroy', 'show']);
     Route::resource('novosts', 'NovostController');
+    Route::resource('articles', 'ArticleController');
 });
 
 
