@@ -27,6 +27,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware(['auth', 
     Route::resource('novosts', 'NovostController');
     Route::resource('articles', 'ArticleController');
     Route::resource('promos', 'PromoController');
+    Route::resource('tms', 'TmController');
 });
 
 
